@@ -17,6 +17,9 @@ angular.module('$feedback.directives',[]).directive('feedbackWidget',['$http',($
           scope.viewMode = 'sm'
         )
       )
+      scope.$watch('viewMode',(newValue,oldValue) ->
+        element.find('textarea.txt-feedback-comment').focus() if newValue == 'lg'
+      )
     template:"
     <div ng-show='viewMode==\"lg\"' class='form-group'>
       <label class='lbl-feedback-comment' for='feedbackComment'>Comment:</label>
