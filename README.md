@@ -63,6 +63,33 @@ Extra classes have been added to assist you with any additional styling.
 * `btn-feedback-cancel`: The cancel button that closes the widget
 * `div-feedback-thanks-text`: The thank you message text that is shown after the user click's submit
 
+### Server Side Sample (Rails)
+``` ruby
+class FeedbacksController < ApplicationController
+  def create
+    #load the comment (verbose way just to illustrate where the data is coming from)
+    f = Feedback.new(comment:params[:feedback][:comment]) 
+    
+    #load some extra stuff from the request for more info
+    f.user_agent = request.headers['HTTP_USER_AGENT']
+    f.referer = request.headers['HTTP_REFERER']
+    f.user = current_user
+    
+    
+    begin
+      f.save!
+    rescue
+      #don't bubble errors up to users since the widget isn't looking for the error
+      ExceptionNotifier.notify_exception($!)
+    end
+
+    #you can render any response you want since the client isn't listening anymore
+    render json: {'ok'=>'ok'}
+  end
+end
+
+```
+
 ### Pro Tip
 
 If you're using this directive in multiple spots within your app, wrap it in your own custom directive so you can encapsulate your settings and extra formatting.
