@@ -63,6 +63,26 @@ Extra classes have been added to assist you with any additional styling.
 * `btn-feedback-cancel`: The cancel button that closes the widget
 * `div-feedback-thanks-text`: The thank you message text that is shown after the user click's submit
 
+### Pro Tip
+
+If you're using this directive in multiple spots within your app, wrap it in your own custom directive so you can encapsulate your settings and extra formatting.
+
+``` coffee
+@myapp.directive 'myFeedback', () ->
+  {
+    replace:true
+    restrict:'E'
+    template:"
+      <div class='my-extra-formatting-wrapper'>
+        <feedback-widget url='/my_feedback_url' thanks-text='Thanks!' />
+      </div>"
+  }
+
+```
+``` html
+<my-feedback />
+```
+
 ## Contributing
 
 Pull requests are always welcome.
