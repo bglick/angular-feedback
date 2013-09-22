@@ -1,0 +1,20 @@
+{
+  "name": "angular-feedback",
+  "version": "1.0.0",
+  "description": "angular feedback directive",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-contrib-uglify": "~0.2.4",
+    "grunt-contrib-jasmine": "~0.5.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bglick/angular-feedback.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bglick/angular-feedback/issues"
+  }
+}

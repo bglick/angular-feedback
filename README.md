@@ -113,3 +113,10 @@ If you're using this directive in multiple spots within your app, wrap it in you
 ## Contributing
 
 Pull requests are always welcome.
+
+### Running tests
+Add all tests to specs.coffee
+
+* Install node.js (I'll leave this to you)
+* npm install
+* grunt test

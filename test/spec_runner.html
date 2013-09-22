@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <!-- jquery -->
+  <script src="../lib/jquery.js"></script>
+
+  <!-- jasmine -->
+  <script src="../lib/jasmine.js"></script>
+  
+  <!-- jasmine's html reporting code and css -->
+  <script src="../lib/jasmine-html.js"></script>
+  <link href="../lib/jasmine.css" rel="stylesheet">
+
+  <!-- angular itself -->
+  <script src="../lib/angular.js"></script>
+  
+  <!-- angular's testing helpers -->
+  <script src="../lib/angular-mocks.js"></script>
+
+  <!-- your angular app code -->
+  <script src="angular-feedback.js"></script>
+  
+  <!-- your Specs (tests) -->
+  <script src="specs.js"></script>
+</head>
+<body>
+  <!-- bootstrap jasmine! -->
+  <script>
+    var jasmineEnv = jasmine.getEnv();
+ 
+ // Tell it to add an Html Reporter
+ // this will add detailed HTML-formatted results
+ // for each spec ran.
+    jasmineEnv.addReporter(new jasmine.HtmlReporter());
+ 
+ // Execute the tests!
+    jasmineEnv.execute();
+  </script>
+</body>
+</html>
