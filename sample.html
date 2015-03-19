@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Feedback Sample</title>
+  <script src='lib/jquery.js'></script>
+  <script src='lib/angular.js'></script>
+  <script src='dist/angular-feedback.js'></script>
+</head>
+<body>
+  <div ng-app='myAppName'>
+    <feedback-widget url="/x" thanksText="y" />
+  </div>
+  <script>
+    var app = angular.module('myAppName',['$feedback.directives']);
+  </script>
+</body>
+</html>

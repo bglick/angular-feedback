@@ -24,9 +24,9 @@ module.exports = (grunt) ->
       }
     }
     jasmine: {
-      src:['test/angular-feedback.js']
+      src: ['test/angular-feedback.js']
       options: {
-        specs:'test/specs.js'
+        specs: 'test/specs.js'
         vendor: ['lib/jquery.js','lib/angular.js','lib/angular-mocks.js']
       }
     }
